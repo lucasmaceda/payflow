@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'modules/login/loginpage.dart';
+import 'modules/homepage/home_page.dart';
+import 'modules/splash/splash_page.dart';
+import 'modules/login/login_page.dart';
 import 'shared/themes/appcolors.dart';
 
 class AppWidget extends StatelessWidget {
@@ -9,7 +10,12 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Pay Flow',
       theme: ThemeData(primaryColor: AppColors.primary),
-      home: LoginPage(),
+      initialRoute: "/splash",
+      routes: {
+        "/splash": (context) => SplashPage(),
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage()
+      },
     );
   }
 }

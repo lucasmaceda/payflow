@@ -13,7 +13,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _controller = LoginController();
+  final controller = LoginController();
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +69,9 @@ class _LoginPageState extends State<LoginPage> {
                       top: 40.0,
                     ),
                     child: SocialLoginButton(
-                      onTap: _controller.googleSignIn,
+                      onTap: () {
+                        controller.googleSignIn(context);
+                      },
                     ),
                   ),
                 ],
